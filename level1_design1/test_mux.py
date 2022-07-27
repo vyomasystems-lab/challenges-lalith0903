@@ -78,7 +78,7 @@ async def test_mux(dut):
     dut.sel.value = select
 
     if select == 0:
-        value = dut..inp0.value
+        value = dut.inp0.value
     elif select == 1:
         value = dut.inp1.value
     elif select == 2:
@@ -140,7 +140,7 @@ async def test_mux(dut):
     else:
         value = 0
     
-    #dut.out.value = value
+    dut.out.value = value
     #print(value)
     print(dut.out.value)
 
