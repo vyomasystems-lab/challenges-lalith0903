@@ -77,10 +77,10 @@ async def test_mux(dut):
     select = random.randint(0, 29)
     dut.sel.value = select
 
-    """if select == 0:
-        dut.out.value = m1
+    if select == 0:
+        value = dut..inp0.value
     elif select == 1:
-        dut.out.value = m2
+        value = dut.inp1.value
     elif select == 2:
         value = dut.inp2.value
     elif select == 3:
@@ -138,7 +138,7 @@ async def test_mux(dut):
     elif select == 29:
         value = dut.inp30.value
     else:
-        value = 0"""
+        value = 0
     
     #dut.out.value = value
     #print(value)
