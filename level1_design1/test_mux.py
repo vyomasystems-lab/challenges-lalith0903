@@ -75,10 +75,12 @@ async def test_mux(dut):
     dut.inp29.value = m30
     dut.inp30.value = m31
 
-    await Timer(10, units='us')
 
     sel1 = random.randint(0, 29)
-    dut.sel.value = random.randint(0, 30)
+    dut.sel.value = sel1
+
+    await Timer(2, units='us')
+
     if sel1 == 0:
         valu = dut.inp0.value
     elif sel1 == 1:
@@ -142,8 +144,10 @@ async def test_mux(dut):
     
     
     dut.out.value = valu
-    #print(value)
-    print(dut.out.value)
+    print("Sel1:", sel1)
+    print("Sel:", dut.sel.value)
+    print("Value:", valu)
+    print("dut.out.value", dut.out.value)
 
     cocotb.log.info('for select {sel1}: the output is {valu}'.format(sel1=dut.sel.value,valu = dut.out.value))
-    #assert dut.out.value == value, 'Test is failed for select {0} in 20_x_1 Mux'.format(select)
+    #assert dut.out.value == valu, 'Test is failed for select {0} in 30_x_1 Mux'.format(sel1)
